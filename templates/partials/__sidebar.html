@@ -20,7 +20,6 @@
       <li><a href="javascript:void(0)"><i class="fa fa-address-book-o" aria-hidden="true"></i><span class="hide-item"> RBAC </span> <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
         <!-- sub-menu -->
         <ul class="sub-menu">
-          {% comment %} <li><a href="#">Chart of Account</a></li> {% endcomment %}
           <li><a href="javascript:void(0)">User Setup<span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
             <ul class="sub-sub">
               <li><a href="#">Mother Admin</a></li>
@@ -29,7 +28,6 @@
               <li><a href="#">Regular User</a></li>
             </ul>
           </li>
-
           <li><a href="javascript:void(0)">User List <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
             <ul class="sub-sub">
               <li><a href="#">Mother Admin</a></li>
@@ -38,7 +36,6 @@
               <li><a href="#">Regular User</a></li>
             </ul>
           </li>
-
           <li><a href="javascript:void(0)">Permission <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
             <ul class="sub-sub">
               <li><a href="#">User Wise</a></li>
@@ -47,8 +44,23 @@
             </ul>
           </li>
         </ul>
-        <!-- sub-menu -->
       </li>
+
+
+
+      <!-- Organization -->
+      <li><a href="javascript:void(0)"><i class="fa fa-address-book-o" aria-hidden="true"></i><span class="hide-item"> Organization </span> <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+        <!-- sub-menu -->
+        <ul class="sub-menu">
+          <li><a href="javascript:void(0)">Mother Organization<span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              <li><a href="{% url 'mother-organization-create' %}">Add New Organization</a></li>
+              <li><a href="{% url 'mother-organization-index' %}">Organization List</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
     </ul>
   </nav>
 

@@ -755,6 +755,68 @@ li.footer a {
 }
 
 /*****************************************
+form-table-area
+*****************************************/
+
+.forms-tables {
+  padding: 0px 15px;
+}
+
+
+
+.form-table-area {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 4px 8px rgba(49, 81, 161, 0.08);
+  box-shadow: 0px 4px 8px rgba(49, 81, 161, 0.08);
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.form-table-title {
+  /* padding: 10px 15px; */
+
+  padding: 5px 9px 0px 15px;
+  border-bottom: 1px solid #ebedf2;
+  position: relative;
+}
+
+.form-table-title::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 12px solid #37a000;
+  border-right: 12px solid transparent;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.form-title-name {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px 0px;
+}
+.form-title-name h4 {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #272727;
+}
+
+.form-submit-cus-btn {
+  background: #37a000;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #272727;
+  padding: 5px 15px;
+  color: #fff;
+  border-radius: 3px;
+  margin-top: 0px;
+  margin-bottom: 8px;
+}
+
+/*****************************************
 table-area
 *****************************************/
 

@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- Page title block -->
+{% block title %}
+  <title>Mother Organization List</title>
+{% endblock title %}
+
+<!-- Internal css block -->
+{% block css %}
+			
+{% endblock css %}
+
+<!-- Main content page block -->
+{% block page %}
+
+{% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-dismissible fade show {% if message.tags %}alert-{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}danger{% else %}{{ message.tags }}{% endif %}{% endif %}" role="alert">{{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+{% endif %}
+
+<!-- table-area  -->
+<div class="table-area">
+  <!-- table-title -->
+  <div class="table-title">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="depertment-name">
+          <h4>Mother Organizations</h4>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="d-flex flex-wrap flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column mb-2 justify-content-xxl-end justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center">
+          <div class="m-2">
+            <div class="selectd">
+              <select class="select2">
+                <option selected>10</option>
+                <option value="1">20</option>
+                <option value="2">50</option>
+                <option value="3">100</option>
+              </select>
+            </div>
+          </div>
+          <div class="m-2">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" class="btn btn-outline-primary">CSV</button>
+              <button type="button" class="btn btn-outline-primary">Excel</button>
+              <button type="button" class="btn btn-outline-primary">PDF</button>
+              <button type="button" class="btn btn-outline-primary">Print</button>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- table-title -->
+  <div class="table-header">
+    <div class="d-flex flex-wrap flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column mb-2 justify-content-xxl-end justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center">
+      <div class="m-2">
+        <div class="data-search " >
+          <div class="input-group search">
+            <input type="search" class="form-control" placeholder="Search...">
+            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tables table-responsive" id="">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">SL No</th>
+          <th>Name (English)</th>
+          <th>Name (Bengali)</th>
+          <th class="text-center">Number of user</th>
+          <th>Has sister concern</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mother_organization in mother_organizations_list %}
+        <tr>
+          <td class="text-center">2</td>
+          <td>{{mother_organization.name_en}}</td>
+          <td>{{mother_organization.name_bn}}</td>
+          <td class="text-center">{{mother_organization.number_of_user}}</td>
+          <td>{{mother_organization.has_sister_concern}}</td>
+          <td>
+            <ul class="action">
+              <li><a href="{% url 'mother-organization-update' mother_organization.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+              <li><a  onclick="SweetDelete(event,this.href)" href="{% url 'mother-organization-delete' mother_organization.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+            </ul>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- Footer Pagination -->
+  <div class="table-footer">
+  {% if mother_organizations_list.has_other_pages %}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-end">
+        {% if mother_organizations_list.has_previous %}
+        <li class="page-item" >
+          <a href="?page={{ mother_organizations_list.previous_page_number }}" class="page-link" tabindex="-1">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+        {% for i in mother_organizations_list.paginator.page_range %}
+          {% if mother_organizations_list.number == i %}
+          <li class="page-item active">             
+            <a class="page-link" href="#">{{i}}</a>
+          </li>
+          {% else %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+          </li>
+          {% endif %}
+        {% endfor %}
+        {% if mother_organizations_list.has_next %}
+        <li class="page-item">
+          <a href="?page={{ mother_organizations_list.next_page_number }}" class="page-link">Next</a>
+        </li>
+        {% else %}
+        <li class="disabled page-item">
+          <a href="#" class="page-link">Next</a>
+        </li>
+        {% endif %}
+      </ul>    
+    </nav>
+    {% endif %}
+  </div>
+</div> 
+{% endblock %}
+
+<!-- Internal JS block -->
+{% block js %}
+
+<script src="{% static 'start_app/organization_app/mother_organization/index.js' %}"></script>
+{% endblock %}
