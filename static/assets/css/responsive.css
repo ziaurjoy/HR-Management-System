@@ -1,0 +1,166 @@
+/* ****************
+Ratina
+************** */
+
+@media (min-width: 1920px) {
+}
+
+@media (max-width: 1920px) {
+}
+
+@media (max-width: 1680px) {
+}
+@media (max-width: 1600px) {
+}
+
+@media (max-width: 1400px) {
+}
+
+/* ****************
+Desktop
+************** */
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 991px) {
+  .closes i {
+    display: block;
+    padding: 5px;
+    color: #222;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #f3f6fc;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    text-align: center;
+    z-index: 999;
+    line-height: 11px;
+  }
+  .menu-area {
+    margin-left: -280px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .mobile {
+    width: 250px !important;
+  }
+  .menu-full ul ul.sub-menu {
+    background: #1c1f22;
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .main-contents {
+    margin-left: 0px !important;
+  }
+  .mob {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1.5;
+    margin-right: 15px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .header-area .menuwidth {
+    display: none;
+  }
+  .small-logo {
+    display: none !important;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+
+  .big-logo {
+    display: block;
+    opacity: 1;
+    margin: 0 auto;
+  }
+  span.hide-item {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  ul.sub-menu li a {
+    padding: 5px 0 5px 58px;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+  .logo {
+    padding: 8px 0px 0px 0px;
+    height: 60px;
+  }
+  .user {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+/* **************** 
+ Tab 
+************** */
+
+@media (max-width: 767px) {
+  .depertment-name h4 {
+    margin-bottom: 5px;
+  }
+  .selectd,
+  .export {
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  .data-search {
+    justify-content: center;
+  }
+  .permission-denied h3 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+}
+
+@media (max-width: 480px) {
+}
+
+/* **************** 
+Mobile 
+************** */
+@media (max-width: 375px) {
+}
+
+@media (max-width: 360px) {
+}
+
+@media (max-width: 320px) {
+}

@@ -1,0 +1,54 @@
+{% load static %}
+
+  <div class="closes"><i class="fa fa-times" aria-hidden="true"></i></div>
+  <!-- logo -->
+  <div class="logo desktop-view">
+    <a href="{% url 'dashboard' %}">
+      <img class="big-logo" src="{% static 'assets/img/logo.png' %}" alt="logo">
+    </a>
+  </div>
+  <!-- user -->
+  <div class="user">
+    <img class="img-fluid" src="{% static 'assets/img/user.png' %}" alt="">
+    <h4>Ziaur Rahman Joy</h4>
+    <p><span class="dot"></span>Admin</p>
+  </div>
+  <!-- menu -->
+  <nav class="menu">
+    <ul>
+      <li><a href="{% url 'dashboard' %}"><i class="fa fa-tachometer" aria-hidden="true"></i> <span class="hide-item">Dashboard </span></a></li>
+      <li><a href="javascript:void(0)"><i class="fa fa-address-book-o" aria-hidden="true"></i><span class="hide-item"> RBAC </span> <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+        <!-- sub-menu -->
+        <ul class="sub-menu">
+          {% comment %} <li><a href="#">Chart of Account</a></li> {% endcomment %}
+          <li><a href="javascript:void(0)">User Setup<span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              <li><a href="#">Mother Admin</a></li>
+              <li><a href="#">Sister Admin</a></li>
+              <li><a href="#">Branch Admin</a></li>
+              <li><a href="#">Regular User</a></li>
+            </ul>
+          </li>
+
+          <li><a href="javascript:void(0)">User List <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              <li><a href="#">Mother Admin</a></li>
+              <li><a href="#">Sister Admin</a></li>
+              <li><a href="#">Branch Admin</a></li>
+              <li><a href="#">Regular User</a></li>
+            </ul>
+          </li>
+
+          <li><a href="javascript:void(0)">Permission <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              <li><a href="#">User Wise</a></li>
+              <li><a href="#">Designation Wise</a></li>
+              <li><a href="#">Department Wise</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- sub-menu -->
+      </li>
+    </ul>
+  </nav>
+
