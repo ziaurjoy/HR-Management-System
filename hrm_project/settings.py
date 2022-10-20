@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'hrm.urls'
+ROOT_URLCONF = 'hrm_project.urls'
 
 TEMPLATES = [
     {
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'hrm.wsgi.application'
+WSGI_APPLICATION = 'hrm_project.wsgi.application'
 
 
 # Database
