@@ -2,7 +2,7 @@
 {% load static %}
 <!-- Page title block -->
 {% block title %}
-  <title>Mother Organization List</title>
+  <title>Mother Organizations</title>
 {% endblock title %}
 
 <!-- Internal css block -->
@@ -27,8 +27,8 @@
   <div class="table-title">
     <div class="row">
       <div class="col-md-4">
-        <div class="depertment-name">
-          <h4>Mother Organizations</h4>
+        <div class="table-name">
+          <h4 id="table-title-name">Mother Organizations</h4>
         </div>
       </div>
       <div class="col-md-8">
@@ -45,10 +45,9 @@
           </div>
           <div class="m-2">
             <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-outline-primary">CSV</button>
-              <button type="button" class="btn btn-outline-primary">Excel</button>
-              <button type="button" class="btn btn-outline-primary">PDF</button>
-              <button type="button" class="btn btn-outline-primary">Print</button>        
+              <button type="button" onclick="exportTableToCSV()" class="btn btn-outline-primary">CSV</button>
+              <button type="button" onclick="ExportToExcel('xlsx')"  class="btn btn-outline-primary">Excel</button>
+              <button type="button" id="table-pdf-button" class="btn btn-outline-primary">Pdf</button>
             </div>
           </div>
         </div>
@@ -68,8 +67,8 @@
       </div>
     </div>
   </div>
-  <div class="tables table-responsive" id="">
-    <table class="table table-hover">
+  <div class="tables table-responsive">
+    <table class="table table-hover" id="export-table-data">
       <thead>
         <tr>
           <th class="text-center">SL No</th>
@@ -77,18 +76,18 @@
           <th>Name (Bengali)</th>
           <th class="text-center">Number of user</th>
           <th>Has sister concern</th>
-          <th>Action</th>
+          <th id="save-remove-action-header">Action</th>
         </tr>
       </thead>
       <tbody>
         {% for mother_organization in mother_organizations_list %}
         <tr>
-          <td class="text-center">2</td>
+          <td class="text-center">{{forloop.counter}}</td>
           <td>{{mother_organization.name_en}}</td>
           <td>{{mother_organization.name_bn}}</td>
           <td class="text-center">{{mother_organization.number_of_user}}</td>
           <td>{{mother_organization.has_sister_concern}}</td>
-          <td>
+          <td id="save-remove-action-data">
             <ul class="action">
               <li><a href="{% url 'mother-organization-update' mother_organization.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
               <li><a  onclick="SweetDelete(event,this.href)" href="{% url 'mother-organization-delete' mother_organization.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></li>
@@ -142,6 +141,5 @@
 
 <!-- Internal JS block -->
 {% block js %}
-
 <script src="{% static 'start_app/organization_app/mother_organization/index.js' %}"></script>
 {% endblock %}

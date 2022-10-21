@@ -1,7 +1,7 @@
 
-// DELETE FUNCTION SWEETALERT
-console.log("I love Bangladesh")
 
+
+// DELETE FUNCTION SWEETALERT
 function SweetDelete(e,href){
   e.preventDefault()
   var self = $(this)
@@ -24,3 +24,5 @@ function SweetDelete(e,href){
     }
   })
 }
+
+
