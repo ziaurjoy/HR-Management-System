@@ -64,9 +64,9 @@ jQuery(document).ready(function () {
   });
 
 
-  $(".select2").select2({
-    tags: true
-  });
+  // $(".select2").select2({
+  //   tags: true
+  // });
 
 });
 
@@ -126,3 +126,21 @@ function exportTableToCSV() {
   // Download CSV file
   downloadCSV(csv.join("\n"), table_title_name+'.csv');
 }
+
+
+
+
+
+
+
+
+// SELECT - 2
+$(document).ready(function() {
+  $("#id_mother_organization").select2({
+    
+  });
+});
+
+
+
+

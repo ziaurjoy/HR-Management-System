@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # startapp
     'dashboard_app',
     'organization_app',
+    'address_app',
     
 ]
 

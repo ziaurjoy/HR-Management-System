@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
 {% load crispy_forms_tags %}
+{% load static %}
 
 <!-- Page title block -->
 {% block title %}
-  <title>Mother Organization Update</title>
+  <title>Sister Organization Create</title>
 {% endblock title %}
 
 <!-- Internal css block -->
@@ -30,7 +31,7 @@
       <div class="">
         <div class="form-title-name">
           <h5 class="mb-0 fw-bold">
-            Mother Organization Update
+            Sister Organization Create
           </h5>
         </div>
       </div>
@@ -41,19 +42,36 @@
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="row">
-        <div class="col-md-6">
-          {{form.name_en|as_crispy_field}}
+        <div class="col-md-4">
+          {{form.mother_organization|as_crispy_field}}
         </div>
-        <div class="col-md-6">
-          {{form.name_bn|as_crispy_field}}
+        <div class="col-md-4">
+          {{form.name_english|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+          {{form.name_bengali|as_crispy_field}}
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
-          {{form.number_of_user|as_crispy_field}}
+        <div class="col-md-4">
+          {{form.division|as_crispy_field}}
         </div>
-        <div class="col-md-6">
-          {{form.has_sister_concern|as_crispy_field}}
+        <div class="col-md-4">
+          {{form.district|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+          {{form.upazila|as_crispy_field}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          {{form.address_details|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+          {{form.website_address|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
+          {{form.has_branch_concern|as_crispy_field}}
         </div>
       </div>
       <div class="row" style="margin-top: 0px;margin-bottom: 8px;">
@@ -71,4 +89,9 @@
 <!-- Internal JS block -->
 {% block js %}
 
+<script type=text/javascript>
+  var districts_url = "{% url 'ajax_load_districts' %}"
+  var upazilas_url = "{% url 'ajax_load_upazilas' %}"
+</script>
+<script src="{% static 'start_app/organization_app/sister_organization/create.js' %}"></script>
 {% endblock %}

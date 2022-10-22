@@ -1,1 +1,1 @@
-from .mother_organization_models import MotherOrganizations
+from .organization_models import MotherOrganizations, SisterOrganizations

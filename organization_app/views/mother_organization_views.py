@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from ..forms import mother_organization_forms
-from ..models import mother_organization_models
+from ..models import organization_models
 
 
 
@@ -27,7 +27,7 @@ def mother_organization_create_view(request):
 
 
 def mother_organization_index_view(request):
-    mother_organization_list = mother_organization_models.MotherOrganizations.objects.all()
+    mother_organization_list = organization_models.MotherOrganizations.objects.all()
     page = request.GET.get('page', 1)
     paginator = Paginator(mother_organization_list, 2)
     try:
@@ -45,7 +45,7 @@ def mother_organization_index_view(request):
 
 def mother_organization_update_view(request, pk):
     # get_mother_organization = mother_organization_models.MotherOrganizations.objects.get(id=pk)
-    get_mother_organization = get_object_or_404(mother_organization_models.MotherOrganizations, id=pk)
+    get_mother_organization = get_object_or_404(organization_models.MotherOrganizations, id=pk)
     form = mother_organization_forms.MotherOrganizationUpdateForms(instance=get_mother_organization)
     if request.method == "POST":
         form = mother_organization_forms.MotherOrganizationUpdateForms(request.POST, instance=get_mother_organization)
@@ -64,7 +64,7 @@ def mother_organization_update_view(request, pk):
 
 def mother_organization_delete_view(request,pk):
     try:
-        get_mother_organization = get_object_or_404(mother_organization_models.MotherOrganizations, id=pk)
+        get_mother_organization = get_object_or_404(organization_models.MotherOrganizations, id=pk)
         get_mother_organization.delete()
         messages.success(request, 'Mother Organization !!')
         return redirect('mother-organization-index')

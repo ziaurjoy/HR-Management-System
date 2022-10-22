@@ -1,15 +1,11 @@
 from django import forms
-from ..models import mother_organization_models
-
+from ..models import organization_models
+from .choiceses import choicess_has_concern
 
 class MotherOrganizationCreateForms(forms.ModelForm):
-    choicess = (
-        ('True', 'Yes'),
-        ('False', 'No')
-    )
-    has_sister_concern = forms.ChoiceField(choices=choicess, widget=(forms.RadioSelect(attrs={'class': 'inline'})))
+    has_sister_concern = forms.ChoiceField(choices=choicess_has_concern, widget=(forms.RadioSelect(attrs={'class': 'inline'})))
     class Meta:
-        model = mother_organization_models.MotherOrganizations
+        model = organization_models.MotherOrganizations
         fields = ('__all__')
         labels = {
             'name_en' : "Name (English)",
@@ -31,13 +27,9 @@ class MotherOrganizationCreateForms(forms.ModelForm):
 
 
 class MotherOrganizationUpdateForms(forms.ModelForm):
-    choicess = (
-        ('True', 'Yes'),
-        ('False', 'No')
-    )
-    has_sister_concern = forms.ChoiceField(choices=choicess, widget=(forms.RadioSelect(attrs={'class': 'inline'})))
+    has_sister_concern = forms.ChoiceField(choices=choicess_has_concern, widget=(forms.RadioSelect(attrs={'class': 'inline'})))
     class Meta:
-        model = mother_organization_models.MotherOrganizations
+        model = organization_models.MotherOrganizations
         fields = '__all__'
         labels = {
             'name_en' : "Name (English)",

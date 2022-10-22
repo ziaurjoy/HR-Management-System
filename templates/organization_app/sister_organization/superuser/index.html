@@ -2,7 +2,7 @@
 {% load static %}
 <!-- Page title block -->
 {% block title %}
-  <title>Mother Organizations</title>
+  <title>Sister Organizations</title>
 {% endblock title %}
 
 <!-- Internal css block -->
@@ -33,9 +33,9 @@
       </div>
       <div class="col-md-8">
         <div class="d-flex flex-wrap flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column mb-2 justify-content-xxl-end justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center">
-          <div class="m-2 col-md-1 col-sm-1 col-xl-1">
+          <div class="m-2">
             <div class="selectd">
-              <select  id="select_index" class="select2">
+              <select id="select_index">
                 <option selected>10</option>
                 <option value="1">20</option>
                 <option value="2">50</option>
@@ -72,25 +72,25 @@
       <thead>
         <tr>
           <th class="text-center">SL No</th>
+          <th>MOther Organization</th>
           <th>Name (English)</th>
           <th>Name (Bengali)</th>
-          <th class="text-center">Number of user</th>
           <th>Has sister concern</th>
           <th id="save-remove-action-header">Action</th>
         </tr>
       </thead>
       <tbody>
-        {% for mother_organization in mother_organizations_list %}
+        {% for sister_organization in sister_organization_list %}
         <tr>
           <td class="text-center">{{forloop.counter}}</td>
-          <td>{{mother_organization.name_en}}</td>
-          <td>{{mother_organization.name_bn}}</td>
-          <td class="text-center">{{mother_organization.number_of_user}}</td>
-          <td>{{mother_organization.has_sister_concern}}</td>
+          <td>{{sister_organization.mother_organization.name_en}}</td>
+          <td>{{sister_organization.name_english}}</td>
+          <td>{{sister_organization.name_bengali}}</td>
+          <td>{{sister_organization.has_branch_concern}}</td>
           <td id="save-remove-action-data">
             <ul class="action">
-              <li><a href="{% url 'mother-organization-update' mother_organization.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-              <li><a  onclick="SweetDelete(event,this.href)" href="{% url 'mother-organization-delete' mother_organization.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+              <li><a href="{% url 'sister-organization-update' sister_organization.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+              <li><a  onclick="SweetDelete(event,this.href)" href="{% url 'sister-organization-delete' sister_organization.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></li>
             </ul>
           </td>
         </tr>
@@ -100,20 +100,20 @@
   </div>
   <!-- Footer Pagination -->
   <div class="table-footer">
-  {% if mother_organizations_list.has_other_pages %}
+  {% if sister_organization_list.has_other_pages %}
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-end">
-        {% if mother_organizations_list.has_previous %}
+        {% if sister_organization_list.has_previous %}
         <li class="page-item" >
-          <a href="?page={{ mother_organizations_list.previous_page_number }}" class="page-link" tabindex="-1">Previous</a>
+          <a href="?page={{ sister_organization_list.previous_page_number }}" class="page-link" tabindex="-1">Previous</a>
         </li>
         {% else %}
         <li class="page-item disabled">
           <a class="page-link" href="#" tabindex="-1">Previous</a>
         </li>
         {% endif %}
-        {% for i in mother_organizations_list.paginator.page_range %}
-          {% if mother_organizations_list.number == i %}
+        {% for i in sister_organization_list.paginator.page_range %}
+          {% if sister_organization_list.number == i %}
           <li class="page-item active">             
             <a class="page-link" href="#">{{i}}</a>
           </li>
@@ -123,9 +123,9 @@
           </li>
           {% endif %}
         {% endfor %}
-        {% if mother_organizations_list.has_next %}
+        {% if sister_organization_list.has_next %}
         <li class="page-item">
-          <a href="?page={{ mother_organizations_list.next_page_number }}" class="page-link">Next</a>
+          <a href="?page={{ sister_organization_list.next_page_number }}" class="page-link">Next</a>
         </li>
         {% else %}
         <li class="disabled page-item">
@@ -138,7 +138,9 @@
   </div>
 </div> 
 {% endblock %}
+
 <!-- Internal JS block -->
 {% block js %}
-<script src="{% static 'start_app/organization_app/mother_organization/index.js' %}"></script>
+<script></script>
+<script src="{% static 'start_app/organization_app/sister_organization/index.js' %}"></script>
 {% endblock %}
