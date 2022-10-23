@@ -8,7 +8,7 @@ from ..models import organization_models
 
 
 
-# @login_required
+@login_required
 def mother_organization_create_view(request):
     form = mother_organization_forms.MotherOrganizationCreateForms()
     if request.method == "POST":
@@ -25,7 +25,7 @@ def mother_organization_create_view(request):
     return render(request, 'organization_app/mother_organization/create.html',context)
 
 
-
+@login_required
 def mother_organization_index_view(request):
     mother_organization_list = organization_models.MotherOrganizations.objects.all()
     page = request.GET.get('page', 1)
@@ -42,7 +42,7 @@ def mother_organization_index_view(request):
     return render(request, 'organization_app/mother_organization/index.html',context)
 
 
-
+@login_required
 def mother_organization_update_view(request, pk):
     # get_mother_organization = mother_organization_models.MotherOrganizations.objects.get(id=pk)
     get_mother_organization = get_object_or_404(organization_models.MotherOrganizations, id=pk)
@@ -61,7 +61,7 @@ def mother_organization_update_view(request, pk):
     return render(request, 'organization_app/mother_organization/update.html',context)
 
 
-
+@login_required
 def mother_organization_delete_view(request,pk):
     try:
         get_mother_organization = get_object_or_404(organization_models.MotherOrganizations, id=pk)

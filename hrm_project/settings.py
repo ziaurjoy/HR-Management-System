@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'dashboard_app',
     'organization_app',
     'address_app',
-    
+    # 'rbac_app',
 ]
 
 

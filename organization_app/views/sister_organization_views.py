@@ -5,11 +5,11 @@ from django.contrib.auth.decorators import login_required
 
 from ..forms import sister_organization_forms
 from ..models import organization_models
-from address_app.models import Districts, Upazila
+from address_app.models import Districts, Upazilas
 
 
 
-# @login_required
+@login_required
 def sister_organization_create_view(request):
     form = sister_organization_forms.SuperUserSisterOrganizationCreateForm()
     if request.method == "POST":
@@ -26,7 +26,7 @@ def sister_organization_create_view(request):
     return render(request, 'organization_app/sister_organization/superuser/create.html',context)
 
 
-
+@login_required
 def sister_organization_index_view(request):
     sister_organization_list = organization_models.SisterOrganizations.objects.all()
     page = request.GET.get('page', 1)
@@ -43,13 +43,13 @@ def sister_organization_index_view(request):
     return render(request, 'organization_app/sister_organization/superuser/index.html',context)
 
 
-
+@login_required
 def sister_organization_update_view(request, pk):
     get_sister_organization = organization_models.SisterOrganizations.objects.get(id=pk)
     get_sister_organization = get_object_or_404(organization_models.SisterOrganizations, id=pk)
     form = sister_organization_forms.SuperUserSisterOrganizationUpdateForm(instance=get_sister_organization)
     form.fields['district'].queryset = Districts.objects.filter(division__id=get_sister_organization.division.id)
-    form.fields['upazila'].queryset = Upazila.objects.filter(district__id=get_sister_organization.district.id)
+    form.fields['upazila'].queryset = Upazilas.objects.filter(district__id=get_sister_organization.district.id)
     if request.method == "POST":
         form = sister_organization_forms.SuperUserSisterOrganizationUpdateForm(request.POST, instance=get_sister_organization)
         if form.is_valid():
@@ -64,7 +64,7 @@ def sister_organization_update_view(request, pk):
     return render(request, 'organization_app/sister_organization/superuser/update.html',context)
 
 
-
+@login_required
 def sister_organization_delete_view(request,pk):
     try:
         get_sister_organization = get_object_or_404(organization_models.SisterOrganizations, id=pk)
@@ -74,3 +74,15 @@ def sister_organization_delete_view(request,pk):
     except:
         messages.error(request, 'Sister Organization not possible !!')
         return redirect('sister-organization-index')
+
+
+
+
+
+@login_required
+def ajax_load_sister_organization(request):
+    mother_organization_id = request.GET.get('mother_organization_id')
+    sister_organization_list = organization_models.SisterOrganizations.objects.filter(mother_organization__id=mother_organization_id).order_by('name_english')
+    return render(request, 'organization_app/sister_organization/load_ajax_sister_organizations.html', {'sister_organization_list': sister_organization_list})
+
+

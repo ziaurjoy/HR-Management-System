@@ -2,7 +2,7 @@
 {% load static %}
 <!-- Page title block -->
 {% block title %}
-  <title>Sister Organizations</title>
+  <title>Branches</title>
 {% endblock title %}
 
 <!-- Internal css block -->
@@ -28,7 +28,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="table-name">
-          <h4 id="table-title-name">Sister Organizations</h4>
+          <h4 id="table-title-name">Branches</h4>
         </div>
       </div>
       <div class="col-md-8">
@@ -73,24 +73,24 @@
         <tr>
           <th class="text-center">SL No</th>
           <th>MOther Organization</th>
+          <th>Sister Organization</th>
           <th>Name (English)</th>
           <th>Name (Bengali)</th>
-          <th>Has sister concern</th>
           <th id="save-remove-action-header">Action</th>
         </tr>
       </thead>
       <tbody>
-        {% for sister_organization in sister_organization_list %}
+        {% for branch in branch_list %}
         <tr>
           <td class="text-center">{{forloop.counter}}</td>
-          <td>{{sister_organization.mother_organization.name_en}}</td>
-          <td>{{sister_organization.name_english}}</td>
-          <td>{{sister_organization.name_bengali}}</td>
-          <td>{{sister_organization.has_branch_concern}}</td>
+          <td>{{branch.mother_organization.name_en}}</td>
+          <td>{{branch.sister_organization.name_english}}</td>
+          <td>{{branch.name_english}}</td>
+          <td>{{branch.name_bengali}}</td>
           <td id="save-remove-action-data">
             <ul class="action">
-              <li><a href="{% url 'sister-organization-update' sister_organization.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-              <li><a  onclick="SweetDelete(event,this.href)" href="{% url 'sister-organization-delete' sister_organization.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+              <li><a href="{% url 'branch-update' branch.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+              <li><a  onclick="SweetDelete(event,this.href)" href="{% url 'branch-delete' branch.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></li>
             </ul>
           </td>
         </tr>
@@ -100,20 +100,20 @@
   </div>
   <!-- Footer Pagination -->
   <div class="table-footer">
-  {% if sister_organization_list.has_other_pages %}
+  {% if branch_list.has_other_pages %}
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-end">
-        {% if sister_organization_list.has_previous %}
+        {% if branch_list.has_previous %}
         <li class="page-item" >
-          <a href="?page={{ sister_organization_list.previous_page_number }}" class="page-link" tabindex="-1">Previous</a>
+          <a href="?page={{ branch_list.previous_page_number }}" class="page-link" tabindex="-1">Previous</a>
         </li>
         {% else %}
         <li class="page-item disabled">
           <a class="page-link" href="#" tabindex="-1">Previous</a>
         </li>
         {% endif %}
-        {% for i in sister_organization_list.paginator.page_range %}
-          {% if sister_organization_list.number == i %}
+        {% for i in branch_list.paginator.page_range %}
+          {% if branch_list.number == i %}
           <li class="page-item active">             
             <a class="page-link" href="#">{{i}}</a>
           </li>
@@ -123,9 +123,9 @@
           </li>
           {% endif %}
         {% endfor %}
-        {% if sister_organization_list.has_next %}
+        {% if branch_list.has_next %}
         <li class="page-item">
-          <a href="?page={{ sister_organization_list.next_page_number }}" class="page-link">Next</a>
+          <a href="?page={{ branch_list.next_page_number }}" class="page-link">Next</a>
         </li>
         {% else %}
         <li class="disabled page-item">
@@ -142,5 +142,5 @@
 <!-- Internal JS block -->
 {% block js %}
 <script></script>
-<script src="{% static 'start_app/organization_app/sister_organization/index.js' %}"></script>
+<script src="{% static 'start_app/organization_app/branch/index.js' %}"></script>
 {% endblock %}

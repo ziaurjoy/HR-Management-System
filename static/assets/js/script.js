@@ -141,6 +141,73 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $("#id_sister_organization").select2({
+    
+  });
+});
+
+
+
+
+//DEPENDENCE
+$("#id_mother_organization").change(function () { 
+  var mother_organizationId = $(this).val();  
+  $.ajax({                       
+  url: ajax_load_sister_organization_url,
+  data: {
+    'mother_organization_id': mother_organizationId   
+  },
+  success: function (data) { 
+    $("#id_sister_organization").html(data);  
+    }
+  });
+});
+
+
+
+// $("#id_sister_organization").change(function () {
+//   var sister_organizationId = $(this).val();  
+//   $.ajax({                       
+//     url: load_branch_organization_url,
+//     data: {
+//     'sister_organization': sister_organizationId   
+//     },
+//     success: function (data) { 
+//     $("#id_branch").html(data);  
+//     }
+//   }); 
+// });
+
+
+// $("#id_branch").change(function () {
+// var branchId = $(this).val();  
+// $.ajax({                       
+//   url: load_department_url,
+  
+//   data: {
+//     'branch': branchId   
+//   },
+//   success: function (data) { 
+//     $("#id_department").html(data);  
+//     }
+// }); 
+// });
+
+
+// $("#id_department").change(function () {
+// var departmentId = $(this).val();  
+// $.ajax({                       
+//   url: load_designation_url,
+  
+//   data: {
+//     'department': departmentId   
+//   },
+//   success: function (data) { 
+//     $("#id_designation").html(data);  
+//     }
+// }); 
+// });
 
 
 

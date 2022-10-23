@@ -1,5 +1,5 @@
 from django import forms
-from address_app.models import Divisions, Districts, Upazila
+from address_app.models import Divisions, Districts, Upazilas
 from ..models import organization_models
 from .choiceses import choicess_has_concern
 
@@ -35,14 +35,14 @@ class SuperUserSisterOrganizationCreateForm(forms.ModelForm):
         
         self.fields['division'].queryset = Divisions.objects.all().order_by('name_english')
         self.fields['district'].queryset = Districts.objects.none()
-        self.fields['upazila'].queryset = Upazila.objects.none()
+        self.fields['upazila'].queryset = Upazilas.objects.none()
         
         if 'division' in self.data  and 'district' in self.data:
         
             division_id = int(self.data.get('division'))
             district_id = int(self.data.get('district'))
             self.fields['district'].queryset = Districts.objects.filter(division__id=division_id).order_by('name_english')
-            self.fields['upazila'].queryset = Upazila.objects.filter(district__id=district_id).order_by('name_english')
+            self.fields['upazila'].queryset = Upazilas.objects.filter(district__id=district_id).order_by('name_english')
          
 
 
@@ -78,12 +78,12 @@ class SuperUserSisterOrganizationUpdateForm(forms.ModelForm):
         
         # self.fields['division'].queryset = Divisions.objects.all().order_by('name_english')
         # self.fields['district'].queryset = Districts.objects.none()
-        # self.fields['upazila'].queryset = Upazila.objects.none()
+        # self.fields['upazila'].queryset = Upazilas.objects.none()
         
         if 'division' in self.data  and 'district' in self.data:
         
             division_id = int(self.data.get('division'))
             district_id = int(self.data.get('district'))
             self.fields['district'].queryset = Districts.objects.filter(division__id=division_id).order_by('name_english')
-            self.fields['upazila'].queryset = Upazila.objects.filter(district__id=district_id).order_by('name_english')
+            self.fields['upazila'].queryset = Upazilas.objects.filter(district__id=district_id).order_by('name_english')
          

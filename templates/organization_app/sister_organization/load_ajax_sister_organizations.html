@@ -1,0 +1,4 @@
+<option value="">--SELECT---</option>
+{% for sister_organization in sister_organization_list %}
+<option value="{{ sister_organization.id }}">{{ sister_organization.name_english }}</option>
+{% endfor %}

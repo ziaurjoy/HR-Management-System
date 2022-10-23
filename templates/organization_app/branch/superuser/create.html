@@ -5,7 +5,7 @@
 
 <!-- Page title block -->
 {% block title %}
-  <title>Sister Organization Update</title>
+  <title>Branch Create</title>
 {% endblock title %}
 
 <!-- Internal css block -->
@@ -31,7 +31,7 @@
       <div class="">
         <div class="form-title-name">
           <h5 class="mb-0 fw-bold">
-            Sister Organization Update
+            Branch Create
           </h5>
         </div>
       </div>
@@ -46,32 +46,29 @@
           {{form.mother_organization|as_crispy_field}}
         </div>
         <div class="col-md-4">
-          {{form.name_english|as_crispy_field}}
+          {{form.sister_organization|as_crispy_field}}
         </div>
-        <div class="col-md-4">
-          {{form.name_bengali|as_crispy_field}}
-        </div>
-      </div>
-      <div class="row">
         <div class="col-md-4">
           {{form.division|as_crispy_field}}
         </div>
+      </div>
+      <div class="row">
         <div class="col-md-4">
           {{form.district|as_crispy_field}}
         </div>
         <div class="col-md-4">
           {{form.upazila|as_crispy_field}}
         </div>
+        <div class="col-md-4">
+          {{form.name_english|as_crispy_field}}
+        </div>
       </div>
       <div class="row">
         <div class="col-md-4">
+          {{form.name_bengali|as_crispy_field}}
+        </div>
+        <div class="col-md-4">
           {{form.address_details|as_crispy_field}}
-        </div>
-        <div class="col-md-4">
-          {{form.website_address|as_crispy_field}}
-        </div>
-        <div class="col-md-4">
-          {{form.has_branch_concern|as_crispy_field}}
         </div>
       </div>
       <div class="row" style="margin-top: 0px;margin-bottom: 8px;">
@@ -88,9 +85,12 @@
 
 <!-- Internal JS block -->
 {% block js %}
+
 <script type=text/javascript>
   var districts_url = "{% url 'ajax_load_districts' %}"
   var upazilas_url = "{% url 'ajax_load_upazilas' %}"
+  var ajax_load_sister_organization_url = "{% url 'ajax-load-sister-organization' %}"
+  
 </script>
-<script src="{% static 'start_app/organization_app/sister_organization/update.js' %}"></script>
+<script src="{% static 'start_app/organization_app/branch/create.js' %}"></script>
 {% endblock %}

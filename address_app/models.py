@@ -20,7 +20,7 @@ class Districts(models.Model):
         return str(self.name_english)
 
 
-class Upazila(models.Model):
+class Upazilas(models.Model):
     name_english = models.CharField(max_length=120)
     name_bengali = models.CharField(max_length=25,default=None)
     district = models.ForeignKey(Districts,on_delete=models.CASCADE, related_name='thana_district')
