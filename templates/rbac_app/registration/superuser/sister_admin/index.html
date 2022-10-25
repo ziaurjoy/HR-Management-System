@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- Page title block -->
+{% block title %}
+  <title>Branches</title>
+{% endblock title %}
+
+<!-- Internal css block -->
+{% block css %}
+			
+{% endblock css %}
+
+<!-- Main content page block -->
+{% block page %}
+
+{% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-dismissible fade show {% if message.tags %}alert-{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}danger{% else %}{{ message.tags }}{% endif %}{% endif %}" role="alert">{{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+{% endif %}
+
+<!-- table-area  -->
+<div class="table-area">
+  <!-- table-title -->
+  <div class="table-title">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="table-name">
+          <h4 id="table-title-name">Branches</h4>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="d-flex flex-wrap flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column mb-2 justify-content-xxl-end justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center">
+          <div class="m-2">
+            <div class="selectd">
+              <select id="select_index">
+                <option selected>10</option>
+                <option value="1">20</option>
+                <option value="2">50</option>
+                <option value="3">100</option>
+              </select>
+            </div>
+          </div>
+          <div class="m-2">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" onclick="exportTableToCSV()" class="btn btn-outline-primary">CSV</button>
+              <button type="button" onclick="ExportToExcel('xlsx')"  class="btn btn-outline-primary">Excel</button>
+              <button type="button" id="table-pdf-button" class="btn btn-outline-primary">Pdf</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- table-title -->
+  <div class="table-header">
+    <div class="d-flex flex-wrap flex-xxl-row flex-xl-row flex-lg-row flex-md-row flex-sm-column mb-2 justify-content-xxl-end justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-sm-center">
+      <div class="m-2">
+        <div class="data-search " >
+          <div class="input-group search">
+            <input type="search" class="form-control" placeholder="Search...">
+            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tables table-responsive">
+    <table class="table table-hover" id="export-table-data">
+      <thead>
+        <tr>
+          <th class="text-center">SL No</th>
+          <th>MOther Organization</th>
+          <th>Sister Organization</th>
+          <th>Name (English)</th>
+          <th>Name (Bengali)</th>
+          <th id="save-remove-action-header">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for branch in branch_list %}
+        <tr>
+          <td class="text-center">{{forloop.counter}}</td>
+          <td>{{branch.mother_organization.name_en}}</td>
+          <td>{{branch.sister_organization.name_english}}</td>
+          <td>{{branch.name_english}}</td>
+          <td>{{branch.name_bengali}}</td>
+          <td id="save-remove-action-data">
+            <ul class="action">
+              <li><a href="{% url 'branch-update' branch.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
+              <li><a  onclick="SweetDelete(event,this.href)" href="{% url 'branch-delete' branch.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+            </ul>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <!-- Footer Pagination -->
+  <div class="table-footer">
+  {% if branch_list.has_other_pages %}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-end">
+        {% if branch_list.has_previous %}
+        <li class="page-item" >
+          <a href="?page={{ branch_list.previous_page_number }}" class="page-link" tabindex="-1">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        {% endif %}
+        {% for i in branch_list.paginator.page_range %}
+          {% if branch_list.number == i %}
+          <li class="page-item active">             
+            <a class="page-link" href="#">{{i}}</a>
+          </li>
+          {% else %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+          </li>
+          {% endif %}
+        {% endfor %}
+        {% if branch_list.has_next %}
+        <li class="page-item">
+          <a href="?page={{ branch_list.next_page_number }}" class="page-link">Next</a>
+        </li>
+        {% else %}
+        <li class="disabled page-item">
+          <a href="#" class="page-link">Next</a>
+        </li>
+        {% endif %}
+      </ul>    
+    </nav>
+    {% endif %}
+  </div>
+</div> 
+{% endblock %}
+
+<!-- Internal JS block -->
+{% block js %}
+<script></script>
+<script src="{% static 'start_app/rbac_app/registrations/sister_organizations/index.js' %}"></script>
+{% endblock %}

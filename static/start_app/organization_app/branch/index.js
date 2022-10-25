@@ -30,3 +30,21 @@ $(document).ready(function() {
   $("#select_index").select2({
   });
 });
+
+
+
+$("#id_mother_organization").change(function () { 
+  var mother_organizationId = $(this).val();  
+  $.ajax({                       
+  url: ajax_load_sister_organization_url,
+  data: {
+    'mother_organization_id': mother_organizationId   
+  },
+  success: function (data) { 
+    $("#id_sister_organization").html(data);  
+    }
+  });
+});
+
+
+

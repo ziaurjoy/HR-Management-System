@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!-- Page title block -->
+{% block title %}
+  <title>Permissions Set</title>
+{% endblock title %}
+
+<!-- Internal css block -->
+{% block css %}
+			
+{% endblock css %}
+
+<!-- Main content page block -->
+{% block page %}
+
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-dismissible fade show {% if message.tags %}alert-{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}danger{% else %}{{ message.tags }}{% endif %}{% endif %}" role="alert">{{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+
+<div class="form-table-area col-md-12 m-auto">
+  <!-- table-title -->
+  <div class="form-table-title">
+    <div class="row">
+      <div class="">
+        <div class="form-title-name">
+          <h5 class="mb-0 fw-bold">
+            Permissions
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- table-title -->
+  <div class="forms-tables" id="">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="table-header">
+        <div>
+          <div class="row">
+            <div class="col-md-4 fw-bold">
+              {{form.mother_organization|as_crispy_field }}
+            </div> 
+            <div class="col-md-4 fw-bold">
+              {{form.sister_organization|as_crispy_field }}
+            </div> 
+            <div class="col-md-4 fw-bold">
+              {{form.branch|as_crispy_field }}
+            </div> 
+            <div class="col-md-4 fw-bold">
+              {{form.user|as_crispy_field }}
+            </div>
+          </div>
+          <div class="col-md-2" style="margin-top: 15px; margin-bottom: 15px">
+            <button type="submit" class="cus-btn" id = 'submit-btn'>Save</button>
+          </div>
+        </div>
+      </div>
+      <div id="id_permission">
+  
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- table-area  -->
+{% endblock %}
+
+<!-- Internal JS block -->
+{% block js %}
+
+<script type=text/javascript>
+  var ajax_load_sister_organization_url = "{% url 'ajax-load-sister-organization' %}"
+  var ajax_load_branch_url = "{% url 'ajax-load-branches' %}"
+  var ajax_load_branch_users_url = "{% url 'ajax-load-branch-users' %}"
+  var ajax_load_user_wise_permission_url = "{% url 'ajax-load-user-wise-permission' %}"
+</script>
+<script src="{% static 'start_app/rbac_app/permissions/index.js' %}"></script>
+{% endblock %}

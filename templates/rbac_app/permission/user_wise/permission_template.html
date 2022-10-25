@@ -1,0 +1,2084 @@
+
+<div class="table-area">
+  <div class="tables table-responsive" id="employee-attendance-general-report-table-pdf">
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+              <th>Module Name</th>
+              <th>Permissions</th>
+              <th class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <th rowspan="5">AttendanceDeviceLogs</th>
+              <td>Add</td>
+              {% if 'attendance_device_log_add' in current_permission %}
+              <td>
+                  <input class="form-check-input m-auto" type="checkbox" checked='checked' name="permission" value="attendance_device_log_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_log_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'attendance_device_log_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_device_log_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_log_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'attendance_device_log_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_device_log_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_log_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'attendance_device_log_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_device_log_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_log_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'attendance_device_log_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_device_log_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_log_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            
+            <tr>
+              <th rowspan="5">AttendanceLogs</th>
+
+              <td>Add</td>
+              {% if 'attendance_log_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_log_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_log_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'attendance_log_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_log_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_log_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'attendance_log_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_log_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_log_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'attendance_log_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="attendance_log_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_log_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'attendance_log_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_log_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_log_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th rowspan="5">WorkingShiftSetup</th>
+
+              <td>Add</td>
+              {% if 'working_shift_setup_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="working_shift_setup_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="working_shift_setup_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'working_shift_setup_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="working_shift_setup_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="working_shift_setup_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'working_shift_setup_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="working_shift_setup_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="working_shift_setup_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'working_shift_setup_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="working_shift_setup_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="working_shift_setup_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'working_shift_setup_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="working_shift_setup_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="working_shift_setup_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">AttendanceDevices</th>
+
+              <td>Add</td>
+              {% if 'attendance_device_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_device_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'attendance_device_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_device_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'attendance_device_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_device_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'attendance_device_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="attendance_device_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'attendance_device_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_device_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_device_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+
+            <tr>
+              <th rowspan="5">Departments</th>
+
+              <td>Add</td>
+              {% if 'department_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="department_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="department_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'department_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="department_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="department_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'department_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="department_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="department_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'department_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="department_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="department_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'department_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="department_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="department_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">Designations</th>
+
+              <td>Add</td>
+              {% if 'designation_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="designation_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'designation_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="designation_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'designation_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="designation_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'designation_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="designation_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'designation' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="designation_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+
+
+            <tr>
+              <th rowspan="5">Employees</th>
+
+              <td>Add</td>
+              {% if 'employee_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="employee_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="employee_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'employee_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="employee_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="employee_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'employee_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="employee_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="employee_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'employee_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="employee_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="employee_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'employee_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="employee_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="employee_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+
+            <tr>
+              <th rowspan="5">BiometricIDs</th>
+
+              <td>Add</td>
+              {% if 'biometric_id_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="biometric_id_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="biometric_id_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'biometric_id_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="biometric_id_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="biometric_id_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'biometric_id_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="biometric_id_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="biometric_id_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'biometric_id_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="biometric_id_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="biometric_id_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'biometric_id_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="biometric_id_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="biometric_id_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+
+            <tr>
+              <th rowspan="5">LefteeSheet</th>
+
+              <td>Add</td>
+              {% if 'leftee_sheet_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leftee_sheet_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leftee_sheet_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'leftee_sheet_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leftee_sheet_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leftee_sheet_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'leftee_sheet_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leftee_sheet_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leftee_sheet_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'leftee_sheet_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="leftee_sheet_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leftee_sheet_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'leftee_sheet_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leftee_sheet_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leftee_sheet_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+            <tr>
+              <th rowspan="5">Holidays</th>
+
+              <td>Add</td>
+              {% if 'holiday_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="holiday_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="holiday_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'holiday_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="holiday_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="holiday_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'holiday_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="holiday_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="holiday_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'holiday_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="holiday_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="holiday_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'holiday_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="holiday_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="holiday_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">LeaveAllocations</th>
+
+              <td>Add</td>
+              {% if 'leave_allocation_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_allocation_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_allocation_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'leave_allocation_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_allocation_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_allocation_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'leave_allocation_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_allocation_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_allocation_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'leave_allocation_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="leave_allocation_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_allocation_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'leave_allocation_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_allocation_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_allocation_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">LeaveAplications</th>
+
+              <td>Add</td>
+              {% if 'leave_aplication_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_aplication_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_aplication_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'leave_aplication_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_aplication_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_aplication_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'leave_aplication_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_aplication_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_aplication_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'leave_aplication_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="leave_aplication_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_aplication_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'leave_aplication_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_aplication_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_aplication_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">Movements</th>
+
+              <td>Add</td>
+              {% if 'movement_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="movement_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="movement_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'movement_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="movement_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="movement_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'movement_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="movement_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="movement_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'movement_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="movement_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="movement_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'movement_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="movement_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="movement_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">ShowCauses</th>
+
+              <td>Add</td>
+              {% if 'show_causes_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="show_causes_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="show_causes_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'show_causes_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="show_causes_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="show_causes_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'show_causes_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="show_causes_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="show_causes_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'show_causes_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="show_causes_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="show_causes_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'show_causes_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="show_causes_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="show_causes_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th rowspan="5">MotherOrganizations</th>
+
+              <td>Add</td>
+              {% if 'mother_organization_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="mother_organization_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mother_organization_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'mother_organization_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="mother_organization_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mother_organization_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'mother_organization_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="mother_organization_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mother_organization_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'mother_organization_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="mother_organization_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mother_organization_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'mother_organization_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="mother_organization_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mother_organization_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">SisterOrganizations</th>
+
+              <td>Add</td>
+              {% if 'sister_organization_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="sister_organization_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="sister_organization_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'sister_organization_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="sister_organization_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="sister_organization_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'sister_organization_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="sister_organization_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="sister_organization_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'sister_organization_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="sister_organization_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="sister_organization_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'sister_organization_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="sister_organization_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="sister_organization_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+            
+
+
+            <tr>
+              <th rowspan="5">Branches</th>
+
+              <td>Add</td>
+              {% if 'branch_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="branch_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="branch_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'branch_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="branch_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="branch_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'branch_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="branch_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="branch_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'branch_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="branch_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="branch_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'branch_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="branch_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="branch_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+            <tr>
+              <th rowspan="5">BenefitTypes</th>
+
+              <td>Add</td>
+              {% if 'benefit_type_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefit_type_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefit_type_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'benefit_type_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefit_type_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefit_type_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'benefit_type_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefit_type_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefit_type_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'benefit_type_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="benefit_type_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefit_type_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'benefit_type_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefit_type_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefit_type_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">Benefits</th>
+
+              <td>Add</td>
+              {% if 'benefits_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefits_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'benefits_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefits_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'benefits_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefits_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'benefits_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="benefits_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'benefits_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefits_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+            <tr>
+              <th rowspan="5">Benefits</th>
+
+              <td>Add</td>
+              {% if 'benefits_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefits_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'benefits_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefits_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'benefits_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefits_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'benefits_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="benefits_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'benefits_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="benefits_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="benefits_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            
+
+            <tr>
+              <th rowspan="5">Bonus</th>
+
+              <td>Add</td>
+              {% if 'bonus_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="bonus_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'bonus_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="bonus_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'bonus_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="bonus_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'bonus_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="bonus_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'bonus_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="bonus_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+            <tr>
+              <th rowspan="5">Bonus</th>
+
+              <td>Add</td>
+              {% if 'bonus_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="bonus_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'bonus_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="bonus_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'bonus_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="bonus_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'bonus_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="bonus_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'bonus_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="bonus_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="bonus_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">MercyTime</th>
+
+              <td>Add</td>
+              {% if 'mercy_time_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="mercy_time_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mercy_time_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'mercy_time_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="mercy_time_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mercy_time_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'mercy_time_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="mercy_time_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mercy_time_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'mercy_time_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="mercy_time_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mercy_time_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'mercy_time_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="mercy_time_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="mercy_time_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">OverTimeSetup</th>
+
+              <td>Add</td>
+              {% if 'ovet_time_setup_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="ovet_time_setup_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="ovet_time_setup_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'ovet_time_setup_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="ovet_time_setup_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="ovet_time_setup_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'ovet_time_setup_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="ovet_time_setup_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="ovet_time_setup_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'ovet_time_setup_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="ovet_time_setup_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="ovet_time_setup_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'ovet_time_setup_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="ovet_time_setup_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="ovet_time_setup_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">SalarySheets</th>
+
+              <td>Add</td>
+              {% if 'salary_sheet_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="salary_sheet_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="salary_sheet_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'salary_sheet_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="salary_sheet_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="salary_sheet_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'salary_sheet_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="salary_sheet_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="salary_sheet_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'salary_sheet_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="salary_sheet_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="salary_sheet_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'salary_sheet_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="salary_sheet_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="salary_sheet_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+            <tr>
+              <th rowspan="5">UserPermissions</th>
+
+              <td>Add</td>
+              {% if 'user_permission_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="user_permission_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_permission_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'user_permission_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="user_permission_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_permission_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'user_permission_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="user_permission_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_permission_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'user_permission_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="user_permission_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_permission_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'user_permission_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="user_permission_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_permission_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+            <tr>
+              <th rowspan="5">DesignationPermission</th>
+
+              <td>Add</td>
+              {% if 'designation_permission_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="designation_permission_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_permission_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'designation_permission_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="designation_permission_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_permission_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'designation_permission_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="designation_permission_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_permission_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'designation_permission_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="designation_permission_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_permission_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'designation_permission_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="designation_permission_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="designation_permission_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+            <tr>
+              <th rowspan="5">Users</th>
+
+              <td>Add</td>
+              {% if 'user_add' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="user_add" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_add" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Index</td>
+              {% if 'user_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="user_index"  id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_index"  id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>View</td>
+              {% if 'user_view' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="user_view" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_view" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Update</td>
+              {% if 'user_update' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" name="permission" checked='checked' value="user_update" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_update" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+            <tr>
+              <td>Delete</td>
+              {% if 'user_delete' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="user_delete"   id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="user_delete"   id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+
+
+            <tr>
+              <th>Attendance General Reports</th>
+
+              <td>View</td>
+              {% if 'attendance_general_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_general_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_general_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+            <tr>
+              <th>Attendance Bonus Reports</th>
+              <td>View</td>
+              {% if 'attendance_bonus_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="attendance_bonus_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="attendance_bonus_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th>Daily Attendance Reports</th>
+              <td>View</td>
+              {% if 'daily_attendance_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="daily_attendance_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="daily_attendance_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th>Eid Bonus Reports</th>
+              <td>View</td>
+              {% if 'eid_bonus_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="eid_bonus_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="eid_bonus_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th>Employee Reports</th>
+              <td>View</td>
+              {% if 'employee_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="employee_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="employee_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th>Holidays Attendance Reports</th>
+              <td>View</td>
+              {% if 'holiday_attendance_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="holiday_attendance_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="holiday_attendance_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th>Late Summary Reports</th>
+              <td>View</td>
+              {% if 'late_summary_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="late_summary_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="late_summary_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+            <tr>
+              <th>Leave Audit Reports</th>
+              <td>View</td>
+              {% if 'leave_audit_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_audit_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_audit_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th>Leave Audit Reports</th>
+              <td>View</td>
+              {% if 'leave_audit_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_audit_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_audit_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th>Leave Balance Reports</th>
+              <td>View</td>
+              {% if 'leave_balance_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="leave_balance_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="leave_balance_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+            <tr>
+              <th>Movement Reports</th>
+              <td>View</td>
+              {% if 'movement_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="movement_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="movement_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+            <tr>
+              <th>Night Bonus Reports</th>
+              <td>View</td>
+              {% if 'night_bonus_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="night_bonus_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="night_bonus_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+            <tr>
+              <th>Salary Sheet Reports</th>
+              <td>View</td>
+              {% if 'salary_sheet_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="salary_sheet_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="salary_sheet_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+            <tr>
+              <th>Show Causes Reports</th>
+              <td>View</td>
+              {% if 'show_causes_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="show_causes_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="show_causes_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+
+            <tr>
+              <th>Single Employee Leave Audit Reports</th>
+              <td>View</td>
+              {% if 'single_employee_leave_audit_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="single_employee_leave_audit_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="single_employee_leave_audit_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+            <tr>
+              <th>Single Employee Monthly Attendance Reports</th>
+              <td>View</td>
+              {% if 'single_employee_monthly_attendance_reports_index' in current_permission %}
+              <td>
+                  <input class="form-check-input" type="checkbox" checked='checked' name="permission" value="single_employee_monthly_attendance_reports_index" id="flexCheckDefault">
+              </td>
+              {% else %}
+              <td>
+                <input class="form-check-input" type="checkbox" name="permission" value="single_employee_monthly_attendance_reports_index" id="flexCheckDefault">
+              </td>
+              {% endif %}
+            </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+    
+    

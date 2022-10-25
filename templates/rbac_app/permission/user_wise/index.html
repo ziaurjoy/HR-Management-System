@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+{% block Style %}
+ 
+{% endblock Style %}
+
+{% block MainContent %}
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<div class="table-area">
+
+  <!-- table-title -->
+  <div class="table-title">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="permission-name">
+          <h4>Permission</h4>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="add-btn">
+          <ul>
+            <li>
+              
+              <a href="{% url 'user-wise-create' %}">
+                <button id="create-permission" class="cus-btn"  type="button" name="button">
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                  Add New User permission
+              </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- table-title -->
+
+    <div class="tables table-responsive mt-0 pt-0">
+        <div class="card-body bg-white " id="permissionList" >
+          <div class="card-body bg-white table-responsive" >
+            <table class="table table-bordered projects" id="deptList" >
+              <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Permission</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+                <tbody >
+
+                
+                  {% regroup users_permission_list by user as user_list %}
+                    {% for user in user_list %}
+                      <td rowspan="{{ user.list | length }}">
+                        {{user.grouper}}
+                      </td>
+      
+                  {% regroup user.list by permission.module_name as module_list %}
+                    {% for module in module_list %}
+
+                  {% for item in module.list %}
+                    <td>
+                      {{item.permission}} 
+                    </td>
+                    {% if 'user_permission_delete' in user_permission_list or request.user.user_type == 'Sister_Organization_admin' or request.user.user_type == 'Mother_Organization_admin' or request.user.is_superuser == True %}
+                    <td>
+                      <ul class="action">
+                        <li>
+                          <a  onclick="SweetDelete(event,this.href)" href="{% url 'user-wise-delete' item.id %}">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                              
+                          </a>
+                        </li>
+                      </ul>
+                    </td>
+                    {% endif %}
+                </tr>
+                                    
+                  {% endfor %}
+                  {% endfor %}
+                  {% endfor %}
+              </body>
+            </table>
+          </div>
+        </div>
+    </div>
+
+      
+
+
+
+    {% comment %} <div class="table-footer">
+      {% if users_permission_list.has_other_pages %}
+      <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-end">
+              {% if users_permission_list.has_previous %}
+              <li class="page-item" >
+                  <a href="?page={{ users_permission_list.previous_page_number }}" class="page-link" tabindex="-1">Previous</a>
+              </li>
+              {% else %}
+              <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                  
+              </li>
+              {% endif %}
+              {% for i in users_permission_list.paginator.page_range %}
+              {% if users_permission_list.number == i %}
+                  <li class="page-item active">
+                  
+                          <a class="page-link" href="#">{{i}}</a>
+  
+                  </li>
+              {% else %}
+                  <li class="page-item">
+                      <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                  </li>
+              {% endif %}
+              {% endfor %}
+              {% if users_permission_list.has_next %}
+              
+              <li class="page-item">
+                  <a href="?page={{ users_permission_list.next_page_number }}" class="page-link">Next</a>
+              </li>
+  
+                  
+              {% else %}
+              <li class="disabled page-item">
+                  <a href="#" class="page-link">Next</a>
+                  
+              </li>
+              {% endif %}
+          </ul>
+      
+              
+      </nav>
+      {% endif %}  
+    </div> {% endcomment %}
+</div>
+<!-- table-area  -->
+
+</div>
+</div>
+<!-- main-contents -->
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+{% endif %}  
+
+{% endblock MainContent %}
+{% block meassage %}
+               
+{% endblock meassage %}
+
+
+{% block JS %}
+
+<script type=text/javascript>
+
+</script>
+<script src="{% static 'js/permission_app/user_permission/permission_create.js' %}"></script>
+
+{% endblock JS %}
+
+
+

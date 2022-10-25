@@ -1,0 +1,23 @@
+{% load crispy_forms_tags %}
+
+<form method="post" id="personForm" data-cities-url="" novalidate>
+  {% csrf_token %}
+  <div class="table-header">
+    <div>
+      <div class="row">
+        <div class="col-md-4 fw-bold">
+          {{form.sister_organization|as_crispy_field }}
+        </div> 
+        <div class="col-md-4 fw-bold">
+          {{form.branch|as_crispy_field }}
+        </div> 
+        <div class="col-md-4 fw-bold">
+          {{form.user|as_crispy_field }}
+        </div>
+      </div>
+      <div class="col-md-2" style="margin-top: 35px;">
+        <button type="submit" class="cus-btn" id = 'submit-btn'>Save</button>
+      </div>
+    </div>
+  </div>
+</form>

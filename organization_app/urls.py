@@ -22,6 +22,7 @@ branch_patterns=[
     path('index/', branch_views.branch_index_view, name='branch-index'),
     path('update/<int:pk>', branch_views.branch_update_view, name='branch-update'),
     path('delete/<int:pk>', branch_views.branch_delete_view, name='branch-delete'),
+    path('load-branches', branch_views.ajax_load_branch, name='ajax-load-branches'),
 ]
 
 

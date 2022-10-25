@@ -1,1 +1,1 @@
-from . import registration_models
+from . import users_models, permission_models

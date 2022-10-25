@@ -89,8 +89,10 @@
           <td>{{mother_organization.has_sister_concern}}</td>
           <td id="save-remove-action-data">
             <ul class="action">
+              {% if request.user.is_superuser == True %}
               <li><a href="{% url 'mother-organization-update' mother_organization.id %}"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
               <li><a  onclick="SweetDelete(event,this.href)" href="{% url 'mother-organization-delete' mother_organization.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></li>
+              {% endif %}
             </ul>
           </td>
         </tr>

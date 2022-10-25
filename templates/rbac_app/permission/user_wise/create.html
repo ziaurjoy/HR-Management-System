@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>Permissions</title>
+{% endblock title %}
+
+{% block Style %}
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+
+
+
+
+</style>
+{% endblock Style %}
+
+{% block MainContent %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-dismissible fade show {% if message.tags %}alert-{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}danger{% else %}{{ message.tags }}{% endif %}{% endif %}" role="alert">{{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+<div class="contents">
+<div class="table-area">
+<div class="table-title">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="depertment-name">
+        <h4>User Permissions</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="table-area">
+
+  <form method="post" id="personForm" data-cities-url="" novalidate>
+    {% csrf_token %}
+    <div class="card-body">
+      <div class="row">
+        {% if request.user.is_superuser == True %}
+        {% include 'permission_app/user_wise_permission/super_admin_forms.html' %}
+        {% endif %}
+        
+        {% if request.user.user_type == 'Mother_Organization_admin' %}
+        {% include 'permission_app/user_wise_permission/mother_admin_forms.html' %}
+        {% endif %}
+        
+        {% if request.user.user_type == 'Sister_Organization_admin' %}
+        {% include 'permission_app/user_wise_permission/sister_admin_forms.html' %}
+        {% endif %}
+        
+        {% if request.user.user_type == 'Branch' or request.user.user_type == 'Regular' %}
+        {% include 'permission_app/user_wise_permission/branch_admin_forms.html' %}
+        {% endif %}
+
+
+       
+              
+
+
+  <div>
+    <div class="col-md-3" style="margin-top: 35px; float: left;">
+      <div class="data-search">
+        <input type="search" class="form-control" id="searchInput" placeholder="Search...">
+        <span class="input-group-text" id="search-btn"><i class="fa fa-search" aria-hidden="true"></i></span>
+      </div>      
+    </div>
+    <div style="float: right; padding-right: 30px; font-size: 20px;" class="checkbox">
+      <input style="height: 17px; width: 17px;" type="checkbox" class="check" id="checkAll"> Check All
+    </div>
+  </div>
+</div>
+  
+<div id="id_permission">
+  
+</div>
+
+
+
+</div>
+  
+{% endblock MainContent %}
+{% block meassage %}
+{% include 'notifications/notifications.html' %}       
+{% endblock meassage %}
+{% block JS %}
+
+<script>
+  var load_sister_organization_url = "{% url 'sister-organization-load' %}"
+  var load_branch_organization_url = "{% url 'load-branch-organization' %}"
+  var load_branch_user_url = "{% url 'permission-user-load' %}"
+  var load_permission_user_wise_user_url = "{% url 'permission-user-wise-ajax-load' %}"
+
+
+  
+
+  $("#checkAll").click(function () {
+    $(".form-check-input").prop('checked', $(this).prop('checked'));
+  });
+
+  $('#id_user').change(function(){
+    console.log($(this).val())
+    $('input[type=checkbox]').prop('checked',false); 
+  })
+
+</script>
+<script src="{% static 'js/permission_app/user_permission/permission_create.js' %}"></script>
+{% endblock JS%}
